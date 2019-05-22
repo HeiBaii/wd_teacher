@@ -1,0 +1,41 @@
+<import src="/component/template/search/search.wxml" />
+
+<view class='container'>
+  <view class='common-top'>
+    <!-- <search  holder="{{holder}}" keyword="{{keyword}}" bindSearchPage="gotoSearch"></search> -->
+    <template is="tpl-search" data="{{holder,keyword}}"></template>
+    <view class='book-box'>
+      <view class='book-ttl' bindtap='bookDetail'>
+        <text>{{info.showName}}</text>
+        <image class='common-down-image {{showBook ? "" : "icon_down_rotate"}}' src='../../../images/icon_01.png'></image>
+      </view>
+      <view class='list_item_box' hidden='{{showBook}}'>
+        <view class='item-txt'>
+          <text>日期：{{info.sendDate}}</text>
+        </view>
+        <view class='item-txt'>
+          <text decode='{{true}}'>应发：{{info.shouldSend}}人 &ensp;&ensp; 实发：{{info.actualSend}}人</text>
+        </view>
+        <view class='item-txt'>
+          <text>发书名称：</text>
+          <text class='cour-contain'>{{info.bookNames}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='detail-box'>
+    <view class='detail-ttl'>
+      <view class='detail-name'>姓名</view>
+      <view class='detail-time'>领取时间<image bindtap='tapSort' class='sort {{showSort ? "" : "icon_down_rotate"}}' src='../../../images/sort.png'></image></view>
+    </view>
+    <scroll-view scroll-y class='detail-contain-box'  style="height:{{height}}px;" bindscrolltolower="lower">
+      <block wx:for="{{list}}" wx:key="{{item}}">
+        <view class='detail-contain'>
+          <view class='detail-name'>{{item.name}}</view>
+          <view class='detail-time'><text decode='{{true}}'>{{item.time}}</text></view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

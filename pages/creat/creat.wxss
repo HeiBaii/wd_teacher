@@ -1,0 +1,28 @@
+/**index.wxss**/
+@import "../../wxss/common.wxss";
+.userinfo {
+  margin-top:100rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 6rpx solid #ffffff;
+  text-align: center;
+  box-shadow: 0rpx 0rpx 10rpx #e1e1e1;
+}
+.user-code{
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+}
+.yzm{
+  width: 30%;
+  line-height: 88rpx;
+  text-align: right;
+  color: #1fc81a;
+}
+.djs{
+  width: 30%;
+  line-height: 88rpx;
+  text-align: right;
+  color: #e1e1e1;
+}

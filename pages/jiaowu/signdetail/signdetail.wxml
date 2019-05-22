@@ -1,0 +1,73 @@
+<view class='search_c'>
+  <view class='common-top'>
+    <view class='search'>
+      <icon type='search' size='20' class='search-icon' color='#999999'></icon>
+      <input placeholder='{{holder}}' placeholder-class='placeholderColor' bindinput='bindInputSearch' bindconfirm='confirmSearch' value='{{keyword}}' class='search-txt'></input>
+      <icon type='clear' size='16' color='#c8c8c8' hidden='{{!showClearicon}}' bindtap='tapDelInputSearch'></icon>
+    </view>
+  </view>
+  <view class='course_name'>{{course_name}}</view>
+  <view class='table clearfix '>
+    <view class='table_title'>
+      <view class='t_name' bindtap='filterNameTap'>姓名</view>
+      <view class='t_inde {{(inde != "")?"c_1":""}}' bindtap='tapInde'>
+        {{(inde == "")?"身份":inde}}
+        <image wx:if='{{inde == ""}}' src="../../../images/icon_01.png"></image>
+        <image wx:else src="../../../images/icon_02.png"></image>
+      </view>
+      <view class='t_sign {{(sign != "")?"c_1":""}}' bindtap='tapSign'>
+        {{(sign == "")?"签到结果":((sign == 1)?"已考勤":"未考勤")}}
+        <image wx:if='{{sign == ""}}' src="../../../images/icon_01.png"></image>
+        <image wx:else src="../../../images/icon_02.png"></image>
+      </view>
+    </view>
+    <view class="table_content">
+      <view class="numberFiler">共找到{{totalRows}}条记录
+      </view>
+      <block wx:for="{{lists}}" wx:key="item">
+        <view class='content'>
+          <view class="contentName">{{item.name}}</view>
+          <view class='{{(item.type=="学生")?"c_1":"c_2"}}'>{{item.type}}</view>
+          <view class='contentTime'>{{((item.time == '') || (item.time == null)) ? '未签到':item.time}}</view>
+        </view>
+      </block>
+    </view>
+    <!-- <view class="nameFilter" hidden="{{hidden_inde}}">
+        <view class="filter">
+          <view bindtap='tapIndeSlected' data-inde=''>全部</view>
+          <view bindtap='tapIndeSlected' data-inde='老师'>老师</view>
+          <view bindtap='tapIndeSlected' data-inde='学生'>学生</view>
+        </view>
+      </view>
+      <view class="nameFilter" hidden="{{hidden_sign}}">
+        <view class="filter">
+          <view bindtap='tapSignSlected' data-sign=''>全部</view>
+          <view bindtap='tapSignSlected' data-sign='1'>已考勤</view>
+          <view bindtap='tapSignSlected' data-sign='2'>未考勤</view>
+        </view>
+      </view> -->
+    <view class='more'>
+      <view class='down-deadline common-font' wx:if="{{isMoreLoad}}" bindtap='onReachBottom'>正在加载更多...</view>
+      <view class='down-deadline common-font' wx:else> — 已到底部 —</view>
+    </view>
+  </view>
+
+  <!-- 身份筛选弹框 -->
+  <view class="nameFilter" hidden="{{hidden_inde}}">
+    <view class="filter">
+      <view bindtap='tapIndeSlected' data-inde=''>全部</view>
+      <view bindtap='tapIndeSlected' data-inde='老师'>老师</view>
+      <view bindtap='tapIndeSlected' data-inde='学生'>学生</view>
+    </view>
+  </view>
+  <!-- 身份筛选弹框 -->
+  <!-- 签到结果 -->
+  <view class="nameFilter" hidden="{{hidden_sign}}">
+    <view class="filter">
+      <view bindtap='tapSignSlected' data-sign=''>全部</view>
+      <view bindtap='tapSignSlected' data-sign='1'>已签到</view>
+      <view bindtap='tapSignSlected' data-sign='2'>未签到</view>
+    </view>
+  </view>
+  <!-- 签到结果 -->
+</view>

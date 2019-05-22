@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='login-box'>
+    <!--输入手机号  -->
+    <view class='user-phone'>
+      <input type='number' placeholder='请输入手机号' placeholder-class='placeholdercolor' bindinput='onBindInput' bindblur='onBindBlur'  value="{{input.telphone}}" bindfocus='obBindFocus'  data-key='telphone'/>
+      <icon hidden='{{!clear_icon.telphone}}' type='clear' size="18" color='#e1e1e1' data-key='telphone' bindtap='onDeleteInput'></icon>
+    </view>
+    <!--输入验证码  -->
+    <view class='user-phone'>
+      <view class='user-code'>
+         <input type='text' placeholder='请输入验证码' placeholder-class='placeholdercolor' bindinput='onBindInput' bindblur='onBindBlur' bindfocus='obBindFocus'  data-key='code' value="{{input.code}}"/>
+        <icon  hidden="{{!clear_icon.code}}"  type='clear' size="18" color='#e1e1e1' data-key='code' bindtap='onDeleteInput'></icon>
+      </view>
+      <view class='yzm' bindtap='tapCode' wx:if="{{btn_code}}">获取验证码</view>
+      <view class='djs'  wx:else>{{time+" 秒后重试"}}</view>
+    </view>
+    <!--输入密码  -->
+    <view class='password-box'>
+      <view class='password-txt'>
+        <input name='password' password='{{!isShowPassword}}' placeholder='请设置密码' placeholder-class='placeholdercolor' bindinput='onBindInput' bindblur='onBindBlur' bindfocus='obBindFocus'  data-key='password' value='{{input.password}}'/>
+        <icon hidden="{{!clear_icon.password}}"  type='clear' size="18" color='#e1e1e1' data-key='password' bindtap='onDeleteInput'></icon>
+      </view>
+      <view class='password-state' bindtap='toggleShowPassword'>
+        <image src='../../images/icon_biyan.png' mode="aspectFit" wx:if='{{!isShowPassword}}'></image>
+        <image src='../../images/icon_zhengyan.png' mode="aspectFit" wx:if='{{isShowPassword}}'></image> 
+      </view>
+    </view>
+    <view class='password-box'>
+      <view class='password-txt'>
+        <input name='password' password='{{!isShowPassword}}' placeholder='请再次输入密码' placeholder-class='placeholdercolor' value="{{input.repassword}}" bindinput='onBindInput' bindblur='onBindBlur' bindfocus='obBindFocus'  data-key='repassword'/>
+        <icon hidden="{{!clear_icon.repassword}}"  type='clear' size="18" color='#e1e1e1' data-key='repassword' bindtap='onDeleteInput'></icon>
+      </view>
+      <view class='password-state' bindtap='toggleShowPassword'>
+        <image src='../../images/icon_biyan.png' mode="aspectFit" wx:if='{{!isShowPassword}}'></image>
+        <image src='../../images/icon_zhengyan.png' mode="aspectFit" wx:if='{{isShowPassword}}'></image> 
+      </view>
+    </view>
+  </view>
+  <view>
+    <button class='btn-login' wx:if="{{okBtn}}" bindtap='setPwdBtn'><text>确定</text></button>
+    <button class='btn' wx:else disabled ><text>确定</text></button>
+  </view>
+</view>

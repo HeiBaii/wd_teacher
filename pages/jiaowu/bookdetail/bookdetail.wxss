@@ -1,0 +1,76 @@
+@import "../../../wxss/common.wxss";
+page{
+  background: #f6f8fa;
+}
+/* .common-top{
+  position: absolute;
+
+} */
+.book-box{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.book-ttl{
+  font-size: 30rpx;
+  font-weight: bold;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.book-ttl text{
+  display: inline-block;
+  width: 94%;
+}
+.list_item_box{
+  margin-left: 0rpx;
+  margin-top: 0rpx;
+  margin-bottom: 30rpx;
+}
+.item-txt{
+  width: 100%;
+}
+.cour-contain{
+  width: 80%;
+}
+.detail-box{
+  width: 100%;
+}
+.detail-ttl{
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 26rpx;
+  color: #999999;
+  font-weight: bold;
+  width: 690rpx;
+  margin:0 auto;
+}
+.detail-name{
+  width: 45%;
+}
+.detail-time{
+  width: 55%;
+}
+.sort{
+  width: 16rpx;
+  height: 22rpx;
+  margin-left: 10rpx;
+}
+.detail-ttl, .detail-contain{
+  display: flex;
+  flex-direction: row;
+}
+.detail-contain-box{
+  background: #ffffff;
+  height: 968rpx;
+}
+.detail-contain{
+  font-size: 26rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #e1e1e1;
+}

@@ -1,0 +1,7 @@
+<template name="tpl-search">
+  <view class='search'>
+    <icon type='search' size='20' class='search-icon' color='#999999'></icon>
+    <input placeholder='{{holder}}' bindtap='tapSearch' placeholder-class='placeholderColor' bindconfirm='confirmSearch' value='{{keyword}}' bindinput='bindInputSearch' class='search-txt'></input>
+    <icon type='clear' size='16' color='#c8c8c8' hidden='{{!showClearicon}}' bindtap='tapDelInputSearch'></icon>
+  </view>
+</template>

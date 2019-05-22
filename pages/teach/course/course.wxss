@@ -1,0 +1,34 @@
+/**index.wxss**/
+@import "../../../wxss/common.wxss";
+page{
+  background: #f6f8fa;
+}
+.course-btm button{
+  width: 694rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  padding: 0rpx;
+  margin: 14rpx auto 0 auto;
+  line-height: 72rpx;
+  color: #ffffff;
+  font-size: 34rpx;
+  font-weight: bold;
+  background: #1cc417;
+}
+.course-btm button::after{
+  border: none;
+}
+.btn{
+  background: linear-gradient(to right, #e6f918 , #24cf1f);
+  opacity: 0.32;
+}
+/* 选中课程后，生成二维码按钮样式 */
+.btn-show{  
+  background: rgba(0, 0, 0,0.15);
+}
+.course-name image{
+  width: 58rpx;
+  height: 36rpx;
+  vertical-align: top;
+  margin-top: 4rpx;
+}

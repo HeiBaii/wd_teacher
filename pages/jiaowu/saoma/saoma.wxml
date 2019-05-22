@@ -1,0 +1,12 @@
+<view class='container'>
+  <view class='saoma'>
+    <image src='../../../images/saoma_jw.png'></image>
+    <text>将二维码放入框内，即可自动扫描</text>
+  </view>
+ 
+  <view class='pop-suc' hidden="{{!is_success}}">{{successTxt}}</view>
+  
+  <!-- 重新扫码  跳转至选课页面-->
+  <layer layer-btn-text="{{layerBtnText}}" layer-hidden="{{ layerHidden }}" layer-msg="{{layerMsg}}" layer-tips-msg="{{layerTipsMsg}}" layer-icon="{{ layerIcon }}" bindlayerbtn="{{btn_event_name}}"></layer>
+
+</view>

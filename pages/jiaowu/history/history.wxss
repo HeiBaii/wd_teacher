@@ -1,0 +1,383 @@
+/* pages/jiaowu/history/history.wxss */
+@import "../../../wxss/common.wxss";
+
+page {
+  background: #f6f8fa;
+}
+
+.cour-date {
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #999;
+}
+
+.search {
+  margin-top: 20rpx;
+}
+
+.today-cour {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 70% !important;
+}
+
+.school-addr, .ident-select {
+  /* width: 50%; */
+  height: 52rpx;
+  color: #999;
+  line-height: 52rpx;
+  padding-left: 130rpx;
+  /* border-right: 1rpx solid #e1e1e1; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.school-addr image {
+  margin-top: 6rpx;
+}
+
+.txt-area {
+  /* max-width: 80%; */
+  height: 52rpx;
+  overflow: hidden;
+}
+
+.ident-select {
+  border-right: none;
+  padding-left: 0rpx;
+}
+
+.ident-txt {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.shadow-ident-container {
+  background: #fff;
+  position: relative;
+}
+
+.ident-line {
+  width: 720rpx;
+  margin-left: 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.common-course-xq text {
+  display: inline-block;
+  width: 100%;
+}
+
+.ident-name {
+  width: 22%;
+  text-align: right;
+}
+
+.ident-name text {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+.info-name {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.ident-teach {
+  color: #1fc81a;
+  line-height: 60rpx;
+}
+
+.ident-stu {
+  color: #ff8b2d;
+  line-height: 60rpx;
+}
+
+.common-top {
+  margin-top: 88rpx;
+  padding-top: 10rpx;
+}
+
+.send-campus {
+  height: 52rpx;
+  line-height: 52rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.send-campus .txt-area {
+  max-width: 100%;
+}
+
+.send-dot {
+  background: #40b7fd;
+}
+
+.common-c-course {
+  width: 78%;
+}
+
+.send-book {
+  width: 100%;
+  background: #f6f8fa;
+  padding: 20rpx;
+  margin-top: 10rpx;
+  line-height: 44rpx;
+}
+
+.send-next {
+  width: 14%;
+  display: flex;
+  align-items: center;
+  text-justify: end;
+}
+
+.ident-name image {
+  width: 19rpx;
+  height: 29rpx;
+  margin-left: 86%;
+}
+
+/* .screening{
+  margin-left:50rpx;
+  display:flex;
+flex-direction:row;
+align-items:center;
+
+}
+.screenTime{
+  margin-right:20px;
+
+}
+.screenTime image{
+  width:14rpx;
+  height:10px;
+  display:inline-block;
+  line-height:88rpx;
+  margin-left:15rpx;
+}
+.screenOneImage{
+margin-right:15rpx;
+}
+.screenTime .time{
+  display:inline-block;
+} */
+
+.screen {
+  width: 150rpx;
+  height: 100%;
+  line-height: 88rpx;
+  margin-left: 30rpx;
+}
+
+.screen view {
+  float: left;
+  color: #999;
+}
+
+.screenImage {
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 33rpx;
+  margin-right: 43rpx;
+}
+
+.picker {
+  border-right: 1rpx solid #e1e1e1;
+  padding-right: 25rpx;
+}
+
+/* .screen{
+  margin-left:120rpx;
+} */
+
+.modelBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.1);
+  margin-top: -88rpx;
+  z-index: 9999;
+  padding-bottom: 88rpx;
+}
+
+.modelBoxText {
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999999;
+  padding-bottom: 88rpx;
+  box-sizing: border-box;
+}
+
+.indentity {
+  width: 100%;
+  height: 200rpx;
+  margin-top: 80rpx;
+  text-align: center;
+}
+
+.indentity button {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.bottomBotton {
+  margin-top: 200rpx;
+}
+
+.other-button-hover {
+  background-color: red;
+}
+
+.reset {
+  border: 1rpx solid #999;
+  width: 160rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  line-height: 80rpx;
+  /* background-color: #40b7fd; */
+  font-size: 32rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+  box-sizing: border-box;
+}
+
+.bluetop {
+  border: 1rpx solid #40b7fd !important;
+  background-color: #40b7fd !important;
+}
+
+.bottonText {
+  margin-bottom: 20rpx;
+}
+
+.bottonColorBlue {
+  background-color: #40b7fd;
+}
+
+.leftview {
+  width: 30%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  padding-bottom: 88rpx;
+}
+
+.select_color {
+  color: #1fc81a !important;
+}
+
+.content {
+  width: 100%;
+  /* height:230rpx; */
+  background-color: #fff;
+  line-height: 50rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  font-weight: none;
+  color: #999;
+  padding-top: 30rpx;
+  /* border-top:1rpx solid #999; */
+  border-bottom: 1rpx solid #999;
+  padding-bottom: 10rpx;
+}
+
+.className {
+  font-size: 32rpx;
+}
+
+.content>view {
+  display: inline-block;
+}
+
+.classTime >view {
+  display: inline-block;
+}
+
+.classTime image {
+  width: 20rpx;
+  height: 20rpx;
+  display: inline-block;
+  margin-right: 6rpx;
+  /* vertical-align: center; */
+}
+
+.classAdress > view {
+  display: inline-block;
+}
+
+.classAdress image {
+  width: 20rpx;
+  height: 20rpx;
+  display: inline-block;
+  margin-right: 6rpx;
+}
+
+.contentLeft {
+  width: 100%;
+  overflow: hidden;
+}
+.classDetail{
+  vertical-align: center
+}
+
+.classDetail view {
+  display: inline-block;
+  margin-right: 30rpx;
+}
+
+.classDetailNumber .classDetailsignIn .classDetailsignOut {
+  margin-right: 6rpx;
+}
+
+.contentRight {
+  float: right;
+  line-height: 200rpx;
+  margin-right: 30rpx;
+}
+
+.classDetailNumberOne {
+  margin-right: 6rpx !important;
+}
+
+.classDetailsignInOne {
+  margin-right: 6rpx !important;
+}
+
+.classDetailsignOutOne {
+  margin-right: 6rpx !important;
+}
+
+.contentImage {
+  width: 30rpx;
+  height: 30rpx;
+  float:right;
+  margin-right:66rpx;
+  vertical-align: bottom;
+  padding-top:8rpx;
+box-shadow:border-box;
+}

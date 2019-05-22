@@ -1,0 +1,31 @@
+@import "../../../wxss/common.wxss";
+page{
+  background:rgba(0, 0, 0, 0.5);
+}
+.saoma{
+  width: 520rpx;
+  margin: auto;
+  margin-top: 220rpx;
+}
+.saoma image{
+ width: 520rpx;
+ height: 520rpx; 
+}
+.saoma text{
+  display: inline-block;
+  height: 88rpx;
+  width: 100%;
+  line-height: 88rpx;
+  color: #ffffff;
+  text-align: center;
+}
+.pop-suc{
+  width: 400rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color:#ffffff;
+  margin: 50rpx;
+  background: #000000;
+  border-radius: 40rpx;
+}

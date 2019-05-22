@@ -1,0 +1,22 @@
+/* pages/teach/scan/scan.wxss */
+@import "../../../wxss/common.wxss";
+page{
+  background: #f6f8fa;
+}
+.top-title{
+  width: 100%;
+  height: 90rpx;
+}
+.sch-tea{
+  width: 490rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.common-c-course{
+  width: 100%;
+}
+.campus-left, .campus-right{
+  max-height: 974rpx;
+}

@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image src='{{avatar}}' mode='aspectFit' style='width:140rpx;height:140rpx;'></image>
+  </view>
+  <view class='login-box'>
+    <!--输入手机号  -->
+    <view class='user-phone'>
+      <input type='number' placeholder='请输入手机号' placeholder-class='placeholdercolor' bindinput='bindInput' bindblur='bindBlur' value="{{input.telphone}}" bindfocus='bindFocus' data-key='telphone' />
+      <icon hidden='{{!clear_icon.telphone}}' type='clear' size="18" color='#e1e1e1' data-key='telphone' bindtap='onDeleteInput'></icon>
+    </view>
+    <!--输入密码  -->
+    <view class='password-box'>
+      <view class='password-txt'>
+        <input name='password' password='{{!isShowPassword}}' placeholder='请输入密码' placeholder-class='placeholdercolor' value="{{input.password}}" bindinput='bindInput' bindblur='bindBlur' bindfocus='bindFocus' data-key='password' />
+        <icon hidden='{{!clear_icon.password}}' type='clear' size="18" color='#e1e1e1' data-key='password' bindtap='onDeleteInput'></icon>
+      </view>
+      <view class='password-state' bindtap='toggleShowPassword'>
+        <image src='../../images/icon_biyan.png' mode="aspectFit" hidden='{{isShowPassword}}'></image>
+        <image src='../../images/icon_zhengyan.png' mode="aspectFit" hidden='{{!isShowPassword}}'></image>
+      </view>
+    </view>
+  </view>
+  <view>
+    <button class='btn-login' wx:if="{{loginBtn}}" bindtap='logbtn'>
+      <text>登录</text>
+    </button>
+    <button class='btn' wx:else disabled bindtap='logbtn'>
+      <text>登录</text>
+    </button>
+  </view>
+  <view class='forget-password' bindtap='bindForget'>
+    <text>忘记密码？</text>
+  </view>
+
+  <view class='creat-password'>
+    <view>初次登陆，请点此</view>
+    <button bindtap='creatPassword'>创建密码</button>
+  </view>
+  <view hidden='{{isShowShade}}'>
+    <view class='shade'></view>
+    <view class='tc_bg'>
+      <view class='sf'>请选择身份</view>
+      <button class='tea' bindtap='goJS'>教师</button>
+      <button class='jw' bindtap='goJW'>教务</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='bg'>
+    <image src='../../../images/bg@2x.png' ></image>
+  </view>
+  <view class='self-info' bindtap='bindTeach'>
+    <view class='tea_pic'>
+      <image src='{{teacher}}'  mode='aspectFit'></image>
+    </view>
+    <view class='tea-name'>
+      {{name}}<text>\n教师</text>
+    </view>
+  </view>
+  <!-- <view class='bottom'>
+    <view class='saoma' bindtap='bindSaoma'>
+      <image src='../../../images/saoma_btn.png'></image>
+    </view>
+    <view class='his-jl' bindtap='bindTeaHistory'>
+      <image src='../../../images/lsjl_btn.png'></image>
+    </view>
+  </view> -->
+  <view class= "t-bottom">
+    <view class="t-bottom-l" bindtap='bindCourse'>
+      <image  src = "../../../images/white@2x.png"></image>
+      <view class="t-bottom-detail">
+        <image src="../../../images/icon_erweima@2x.png"></image>
+        <view class="box"></view>
+        <view class="text">二维码</view>
+      </view>
+    </view>
+    <view bindtap='bindTeaHistory'>
+      <image  src = "../../../images/white@2x.png"></image>
+      <view class="t-bottom-detail">
+        <image src="../../../images/icon_lishijilu@2x.png"></image>
+        <view class="box"></view>
+        <view class="text">历史记录</view>
+      </view>
+    </view>
+    <view class="t-bottom-l" bindtap='bindSaoma' >
+      <image  src = "../../../images/white@2x.png"></image>
+      <view class="t-bottom-detail">
+        <image src="../../../images/icon_saoyisao@2x.png"></image>
+        <view class="box"></view>
+        <view class="text">扫一扫</view>
+      </view>
+    </view>
+  </view>
+  <layer layer-btn-text="{{layerBtnText}}" layer-hidden="{{ layerHidden }}" layer-msg="{{layerMsg}}" layer-tips-msg="{{layerTipsMsg}}" layer-icon="{{ layerIcon }}" bindlayerbtn="{{btn_event_name}}"></layer>
+</view>

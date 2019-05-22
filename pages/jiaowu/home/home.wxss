@@ -1,0 +1,58 @@
+/**index.wxss**/
+@import "../../../wxss/common.wxss";
+
+.tea-name>text{
+  font-size: 26rpx;
+  color: #4d80e8;
+}
+
+.t-bottom{
+  margin-top:414rpx;
+  width:100%;
+  height:100rpx;
+  z-index:9999;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left:116rpx;
+}
+.t-bottom>view{
+  position: relative;
+}
+.t-bottom>view>image{
+  width:312rpx;
+  height:256rpx;
+  z-index:511
+}
+.t-bottom-l{
+  margin-right:12rpx;
+}
+.t-bottom view:nth-child(3) {
+  align-self: flex-start;
+}
+.t-bottom-detail{
+  position: absolute;
+  width:312rpx;
+  height:256rpx;
+  top:0;
+  left:0;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+}
+.t-bottom-detail image{
+  width:86rpx;
+  height:86rpx;
+}
+.t-bottom-detail .box{
+  width:100%;
+  height:22rpx;
+}
+.t-bottom-detail .text{
+ margin-top:22rx;
+ font-size:34rpx;
+ color:#000000;
+ margin:0 auto;
+}

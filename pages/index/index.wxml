@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='login-box'>
+    <!--输入旧密码  -->
+    <view class='user-phone'>
+      <input placeholder='请输入旧密码' placeholder-class='placeholdercolor' bindinput='input'  value="{{telphone}}"/>
+      <icon class='{{clearPhone}}' type='clear' size="18" color='#e1e1e1' bindtap='deltelPhone'></icon>
+    </view>
+    <!--输入新密码  -->
+    <view class='password-box'>
+      <view class='password-txt'>
+        <input name='password' password='{{!isShowPassword}}' placeholder='请输入新密码' placeholder-class='placeholdercolor' value="{{password}}"  bindinput='bindPassword'/>
+        <icon class='{{clearPassword}}' type='clear' size="18" color='#e1e1e1' bindtap='deltelPassword'></icon>
+      </view>
+      <view class='password-state' bindtap='toggleShowPassword'>
+        <image src='../../images/icon_biyan.png' mode="aspectFit" wx:if='{{!isShowPassword}}'></image>
+        <image src='../../images/icon_zhengyan.png' mode="aspectFit" wx:if='{{isShowPassword}}'></image> 
+      </view>
+    </view>
+  </view>
+  <view>
+    <button class='{{loginBtn}}' bindtap='logbtn'><text>确定</text></button>
+  </view>
+</view>

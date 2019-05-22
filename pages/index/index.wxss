@@ -1,0 +1,8 @@
+/**index.wxss**/
+@import "../../wxss/common.wxss";
+.forget-password{
+  width: 550rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #999999;
+}

@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/personal/personal",
+    "pages/jiaowu/home/home",
+    "pages/jiaowu/history/history",
+    "pages/jiaowu/select/select",
+    "pages/teach/home/home",
+    "pages/jiaowu/saoma/saoma",
+    "pages/jiaowu/schoolPoint/school",
+    "pages/jiaowu/bookdetail/bookdetail",
+    "pages/jiaowu/signdetail/signdetail",
+    "pages/forget/forget",
+    "pages/password/password",
+    "pages/search/search",
+    "pages/teach/history/history",
+    "pages/teach/code/code",
+    "pages/creat/creat",
+    "pages/teach/course/course",
+    "pages/teach/codefail/codefail",
+    "pages/teach/codeinvalid/codeinvalid",
+    "component/template/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

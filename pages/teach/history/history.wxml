@@ -1,0 +1,80 @@
+<view class='container'>
+  <view class='common-top' wx:if="{{showHidden}}">
+    <search  holder="{{holder}}" keyword="{{keyword}}"  bindSearch="tapSearch" bindSearchPage="gotoSearch"></search>
+    
+    <view class='tab'>
+      <view class='sch-tea common-font' bindtap='camputChoice'>
+        <text>{{campusAndSchool}}</text>
+        <image class='common-down-image' src='../../../images/icon_01.png'></image>
+      </view>
+      <view class='common-calendar'>
+        <view>
+          <picker mode="date" value="{{date}}" start="2018-01-01" bindchange="bindDateChange">
+            <view class="picker">
+              {{date}}
+              <text>{{weeks}}</text>
+              <image class='common-down-image' src='../../../images/icon_01.png'></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='n20'></view>
+  
+  <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class='common-jl-bg' wx:for='{{list}}'>
+      <view class='common-l-icon'>
+        <view class='common-dot'></view>
+      </view>
+      <view class='common-c-course'>
+        <view class='common-course-title'>{{item.commonCourseTitle}}</view>
+        <view class='common-course-xq common-font'>
+          <text>{{item.commonCourseXq}}</text>
+        </view>
+      </view>
+    </view>
+    <view hidden="{{!requestLoadingComplete}}" class='down-deadline common-font'>
+      — 已到底部 —
+    </view>
+    <view hidden="{{!requestLoading}}" class='down-deadline common-font' wx:if="{{ load==0 }}">
+      加载更多...
+    </view>
+  </scroll-view>
+
+  <!-- 点击校区/教学点后的样式 -->
+  <view class='common-shadow-box {{shadowHidden}}'>
+    <view class='common-shadow-contain'>
+      <view class='common-top'>
+        <view class='search'>
+          <icon type='search' size='20' class='search-icon' color='#999999'></icon>
+          <input  placeholder-class='placeholderColor' class='search-txt'></input>
+          <icon type='clear' size='16' color='#c8c8c8' class='{{iconClear}}'></icon>
+        </view>
+        <view class='tab'>
+          <view class='common-shadow-choice '>
+            <text>请选择校区/教学点</text>
+          </view>
+        </view>
+      </view>
+      <view class='common-school'>
+        <view class='all-campus' bindtap='tapSelectAll'>全部校区</view>
+        <view class='campus-box'>
+          <!-- 校区tab wx:for='{{listTab}}'-->
+          <scroll-view scroll-y class='campus-left left'>
+            <block wx:for="{{schoolAndPlaceList}}" wx:for-index='index' wx:key="{{id}}">
+              <view class="campus-tab {{schoolId==item.id?'active':''}}" data-index='{{index}}' data-id='{{item.id}}' bindtap='changeTab'>{{item.label}}</view>
+            </block>
+          </scroll-view>
+          <!-- 校区包含的教学点 -->
+          <scroll-view scroll-y class='campus-right right'>
+            <view class= "teach-school {{placeId[0]==0?'on':''}}" bindtap='tapSelectPlaceAll'>全部</view>
+            <block wx:for="{{schoolAndPlaceList[curIndex].children}}" wx:for-index='index'>
+              <view class='teach-school {{teachingPlaceId==item.id ? "on":""}}' bindtap='selectTap' data-id='{{item.id}}' data-name="{{item.label}}" data-index='{{index}}'>{{item.label}} </view>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

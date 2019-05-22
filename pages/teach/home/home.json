@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "教务管理系统",
+  "usingComponents": {
+    "layer": "../../../component/layer/layer"
+  }
+}

@@ -1,0 +1,14 @@
+/* pages/search/search.wxss */
+@import "../../wxss/common.wxss";
+.search-box{
+  width: 690rpx;
+  display: flex;
+  flex-direction: row;
+}
+.search{
+  width:87%;
+}
+.btn-box{
+  width: 13%;
+  height: 58rpx;
+}

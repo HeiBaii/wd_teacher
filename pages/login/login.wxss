@@ -1,0 +1,75 @@
+/**index.wxss**/
+@import "../../wxss/common.wxss";
+.forget-password{
+  width: 550rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #999999;
+}
+.creat-password{
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  position: absolute;
+  bottom: 80rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.creat-password text{
+  color: #1fc81a;
+}
+.creat-password button{
+  margin: 0rpx;
+  padding: 0rpx;
+  font-size: 30rpx;
+  color: #1fc81a;
+  background: #ffffff;
+  margin-top: 2rpx;
+}
+
+.shade{
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 999;
+  opacity: 0.6;
+}
+.tc_bg{
+  width: 540rpx;
+  height: 338rpx;
+  border-radius: 20rpx;
+  background: #ffffff;
+  position: fixed;
+  z-index: 9999;
+  top: 30%;
+  left: 15%;
+  text-align: center;
+}
+.tc_bg button{
+  width: 150rpx;
+  height: 58rpx;
+  border-radius: 29rpx;
+  padding: 0;
+  line-height: 58rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-top: 40rpx;
+  color: #ffffff;
+}
+.sf{
+  margin-top: 40rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.tea{
+  background:linear-gradient(to right, #ffc200 , #ff9700); 
+}
+.jw{
+  background:linear-gradient(to right, #49c0ff , #3995fb); 
+}

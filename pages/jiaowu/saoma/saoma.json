@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "扫一扫",
+  "navigationBarBackgroundColor": "#222224",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "layer": "../../../component/layer/layer"
+  }
+}

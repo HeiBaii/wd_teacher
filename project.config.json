@@ -1,0 +1,75 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.0",
+	"appid": "wxbee61ca7d7fd1988",
+	"projectname": "CIS%20Fat",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "Scnner_1",
+					"pathName": "pages/login/login",
+					"query": "name=history",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "历史页面",
+					"pathName": "pages/jiaowu/history/history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "签到详情",
+					"pathName": "pages/jiaowu/signdetail/signdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发书详情",
+					"pathName": "pages/jiaowu/bookdetail/bookdetail",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

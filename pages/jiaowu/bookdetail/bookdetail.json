@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发书详情",
+  "usingComponents": {
+    "search": "../../../component/search/search"
+  }
+}

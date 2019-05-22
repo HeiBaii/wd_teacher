@@ -1,0 +1,80 @@
+/**index.wxss**/
+@import "../../../wxss/common.wxss";
+page{
+  background: #50a155;
+}
+.teach-code{
+  width: 662rpx;
+  height: 730rpx;
+  background: #ffffff;
+  /* background: url('http://www.laravel5.6.com/img/code_bg.png'); */
+  background-size: 100% 100%; 
+  margin-top: 70rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  overflow: hidden;
+}
+.code-title{
+  width: 100%;
+  height: 56rpx;
+  text-align: center;
+  line-height: 56rpx;
+  margin-top: 60rpx;
+  font-size: 34rpx;
+  font-weight:500;
+}
+.code-img{
+  width: 500rpx;
+  height: 500rpx;
+  margin: 40rpx auto;
+}
+.code-img image{
+  width: 500rpx;
+  height: 500rpx;
+}
+.code-lose{
+  width: 500rpx;
+  height: 600rpx;
+  background: #eaeaea;
+  /* background: url(''); 背景图片设置 */
+  margin: 60rpx auto 0rpx;
+}
+.code-lose-warm{
+  width: 400rpx;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.code-lose-warm icon{
+  margin-top: 80rpx;
+}
+.code-lose-txt{
+  margin-top: 40rpx;
+  line-height: 56rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.code-lose-txt text{
+  font-size: 30rpx;
+  color: #999999;
+  font-weight: 400;
+}
+.code-lose button{
+  margin-top: 60rpx;
+  width: 220rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  border: 1px solid #1fc81a;
+  background: rgba(0, 0, 0, 0);
+  color: #1fc81a;
+  font-size: 34rpx;
+  font-weight: bold;
+  padding: 0rpx;
+  line-height: 70rpx;
+}
+.code-show{
+  display: block;
+}
+.code-hide{
+  display: none;
+}

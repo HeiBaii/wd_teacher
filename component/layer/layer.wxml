@@ -1,0 +1,13 @@
+<view wx:if="{{ layerHidden }}" class='modal_box'>
+  <view class="title">
+    <icon type="{{ layerIcon }}" size='40' color='{{ layerColor }}'></icon>
+    <!-- <image src="{{ layerIcon }}"></image> -->
+  </view>
+  <view class='content'>
+    <text class='modalMsg'>{{layerMsg}}\n<text class='modalTips' wx:if="{{layerTips}}">{{layerTipsMsg}}</text></text>
+    
+  </view>
+  <view class='btn'>
+    <view bindtap='bindLayerBtn' class='Sure'>{{ layerBtnText }}</view>
+  </view>
+</view>

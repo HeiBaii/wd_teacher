@@ -1,0 +1,21 @@
+.search{
+  width: 690rpx;
+  height: 58rpx;
+  background: #f5f5f5;
+  border-radius: 29rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10rpx auto 0 auto;
+}
+.search-icon{
+  margin-left: 20rpx;
+}
+.placeholderColor{
+  font-size: 26rpx;
+  color: #999999;
+}
+.search-txt{
+  margin-left: 20rpx;
+  width:80%;
+}

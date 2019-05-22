@@ -1,0 +1,121 @@
+/**index.wxss**/
+@import "../../wxss/common.wxss";
+.top{
+  width: 750rpx;
+  height: 324rpx;
+  background: #f2f7fc;
+  text-align: center;
+}
+.top .topBg image{
+  width: 750rpx;
+  height: 324rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.nickname{
+  width: 100%;
+  text-align: center;
+  z-index: 9999999;
+  position: fixed;
+}
+.userinfo{
+  margin: 50rpx auto 10rpx;
+}
+.nickname text{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.contain-bg{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.contain-box{
+  width: 100%;
+  height: 108rpx;
+  line-height: 108rpx;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  flex-direction: row;
+}
+.contain-l{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+.contain-r{
+  float: right;
+  width: 60%;
+  text-align: right;
+  color: #999999;
+}
+.btom-none{
+  border-bottom:none;
+}
+.n20{
+  background:#f6f8fa;
+  height: 20rpx;
+  width: 100%;
+}
+
+.sf_change{
+  width: 190rpx;
+  text-align: right;
+  vertical-align: middle;
+}
+.sf_change text{
+  display: inline-block;
+  font-size: 26rpx;
+  color: #1fc81a;
+  padding-left: 30rpx;
+  padding-right: 12rpx;
+}
+.sf_change image{
+  width:19rpx;
+  height:29rpx;
+}
+
+.shade{
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 999;
+  opacity: 0.6;
+}
+.tc_bg{
+  width: 540rpx;
+  height: 338rpx;
+  border-radius: 20rpx;
+  background: #ffffff;
+  position: fixed;
+  z-index: 9999;
+  top: 30%;
+  left: 15%;
+  text-align: center;
+}
+.tc_bg button{
+  width: 150rpx;
+  height: 58rpx;
+  border-radius: 29rpx;
+  padding: 0;
+  line-height: 58rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-top: 40rpx;
+  color: #ffffff;
+}
+.sf{
+  margin-top: 40rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.tea{
+  background:linear-gradient(to right, #ffc200 , #ff9700); 
+}
+.jw{
+  background:linear-gradient(to right, #49c0ff , #3995fb); 
+}

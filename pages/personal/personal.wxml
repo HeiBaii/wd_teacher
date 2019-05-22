@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='top'>
+    <view class='topBg'>
+      <image src='../../images/topbg.png' style='width:750rpx;height:324rpx;'></image>
+    </view>
+    <view class='nickname'>
+      <view class="userinfo">
+        <image src='{{avatar}}' mode='aspectFit' style='width:140rpx;height:140rpx;'></image>
+      </view>
+      <view>
+        <text>{{name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='contain-bg'>
+    <view class='contain-box'>
+      <view class='contain-l'>
+        手机号码
+      </view>
+      <view class='contain-r'>
+        {{CellPhoneNumber}}
+      </view>
+    </view>
+    <view class='contain-box btom-none'>
+      <view class='contain-l'>
+        身份
+      </view>
+      <view class='contain-r'>
+        {{identity}}
+      </view>
+      <view class='sf_change' wx:if="{{canSelectRole}}" bindtap='tabSelect'>
+        <text>切换</text>
+        <image src='../../images/next.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='n20'></view>
+  <view class='contain-bg'>
+    <view class='contain-box' bindtap='bindChangePassword'>
+      <view class='contain-l'>
+        修改密码
+      </view>
+      <view class='contain-r'>
+        <image src='../../images/next.png' style='width:19rpx;height:29rpx;'></image>
+      </view>
+    </view>
+    <view class='contain-box' bindtap='quit'>退出</view>
+  </view>
+  <view hidden='{{isShowShade}}'>
+    <view class='shade'></view>
+    <view class='tc_bg'>
+      <view class='sf'>请选择身份</view>
+      <button class='tea' bindtap='goJS'>教师</button>
+      <button class='jw' bindtap='goJW'>教务</button>
+    </view>
+  </view>
+</view>

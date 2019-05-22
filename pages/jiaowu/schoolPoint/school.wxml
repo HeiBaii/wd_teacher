@@ -1,0 +1,128 @@
+<view class='container'>
+  <view class='top-tab'>
+    <view class="tab-left">
+      <view class="txt {{currentTab==0 ? 'edu-on' : ''}}" bindtap="swichNav" data-current="0">上课签到</view>
+      <view class='on-line' hidden='{{currentTab!=0}}'></view>
+    </view>
+    <view class='tab-right'>
+      <view class="txt {{currentTab==1 ? 'edu-on' : ''}}" bindtap="swichNav" data-current="1">集中发书</view>
+      <view class='on-line' hidden='{{currentTab!=1}}'></view>
+    </view>
+  </view>
+  <swiper current='{{currentTab}}' duration='300' bindchange='bindSwiper' style="height: {{height?height+'px':'auto'}};width:100%">
+    <!-- 上课签到 -->
+    <swiper-item>
+      <!-- 日期 -->
+      <view class='cour-top'>
+        <view class='today-cour'>
+          <view class='course-bg'>今日课程</view>
+        </view>
+        <view class='common-calendar'>
+          <view>
+            <picker mode="date" value="{{timeDay[0]}}" start="2018-09-01" bindchange="bindDateChange">
+              <view class="picker">
+                {{timeStr[0]}}
+                <image class='common-down-image' src='../../../images/icon_01.png'></image>
+              </view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class='n20'></view>
+      <!-- 课程 -->
+      <scroll-view scroll-y  bindscrolltolower="tapLower" style='margin-bottom:100rpx;height: {{topHeight}}px'>
+        <view class='list-box' wx:for='{{list}}' wx:key='this' wx:for-item='courseItem' wx:for-index='index'>
+          <view class='list'>
+            <view class='list_name_box' bindtap='tapSpreadCourse' data-index='{{index}}'>
+              <view class='icon-box'>
+                <icon type="{{curIndex[0]==index?'success':'circle'}}" size="24" data-index="{{index}}" data-select="{{courseItem.select}}" catchtap="tapSelectCourse"></icon>
+              </view>
+              <view class='course-name'>
+                <image src='../../../images/icon_hb.png' wx:if="{{courseItem.isUnion == 1}}"></image>
+                {{courseItem.showName}}
+              </view>
+              <view class='icon-zk'>
+                <image src='../../../images/icon_01.png' class='icon_down {{courseItem.show&&"icon_down_rotate"}}'></image>
+              </view>
+            </view>
+            <view class='list_item_box' wx:if='{{courseItem.show}}'>
+              <view class='item-txt'>
+                <text  class='cour-title'>上课时间:</text>
+                <text  class='cour-contain'>{{courseItem.timeDetail}}</text>
+              </view>
+              <view class='item-txt'>
+                <text class='cour-title'>上课地点: </text>
+                <text class='cour-contain'>{{courseItem.otherAddr}}</text>
+              </view>
+              <view class='item-txt' wx:if='{{courseItem.grantPlanId > 0}}'>
+                <text  class='cour-title'>发书名称: </text>
+                <text  class='cour-contain'>{{courseItem.bookNames}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <!-- 底部tab -->
+      <view class=" course-btm">
+        <button class='btn01 {{(courseSign==1 || courseSign==3)?"":"btn-opac"}}' bindtap='tapSign'>开始签到</button>
+        <button class='btn02 {{(courseSign==2 || courseSign==3)?"":"btn-opac"}}' bindtap='tapSendBook'>开始发书</button>
+        <button class='btn03 {{(courseSign==3)?"":"btn-opac"}}' bindtap='tapSignAndSendBook'>签到和发书</button>
+      </view>
+    </swiper-item>
+
+    <!-- 集中发书 -->
+    <swiper-item>
+
+      <view class='cour-top'>
+        <view class='today-cour'>
+          <view class='course-bg book'>发书计划</view>
+        </view>
+        <view class='common-calendar'>
+          <view>
+            <picker mode="date" value="{{timeDay[1]}}" start="2018-09-01" bindchange="bindDateChange">
+              <view class="picker">
+                {{timeStr[1]}}
+                <!-- <text>周六</text> -->
+                <image class='common-down-image' src='../../../images/icon_01.png'></image>
+              </view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class='n20'></view>
+
+      <!-- 发书 -->
+      <scroll-view scroll-y bindscrolltolower="tapLower" style='margin-bottom:100rpx;height:{{height-100}}px;'>
+
+        <view class='list-box' wx:for='{{bookList}}' wx:key='this' wx:for-item='bookItem' wx:for-index='index'>
+          <view class='sendList'>
+            <view class='list_name_box' bindtap='tapSpreadBook' data-index='{{index}}'>
+              <view class='icon-box'>
+                <icon type="{{curIndex[1]==index?'success':'circle'}}" size="24" data-index="{{index}}" data-select="{{bookItem.select}}" catchtap="tapSelectBook"></icon>
+              </view>
+              <view class='course-name'>{{bookItem.showName}}</view>
+              <view class='icon-zk'>
+                <image src='../../../images/icon_01.png' class='icon_down {{bookItem.show&&"icon_down_rotate"}}'></image>
+              </view>
+            </view>
+            <view class='list_item_box' wx:if='{{bookItem.show}}'>
+              <view class='item-txt'>
+                <text wx:if='true' class='cour-title'>发书总量:</text>
+                <text wx:if='true' decode='{{true}}' class='cour-contain'>{{bookItem.totalBookNum}}本 &ensp; 领取人数：{{bookItem.studentNum}}人 &ensp; 人均：{{bookItem.avgBookNum}}本</text>
+              </view>
+              <view class='item-txt'>
+                <text wx:if='true' class='cour-title'>发书名称:</text>
+                <text wx:if='true' class='cour-contain'>{{bookItem.bookNames}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <!-- 底部tab -->
+      <view class="{{isIphoneX?'btn-phonex':''}} course-btm start-send">
+        <!--  class='checked' 为选中课程后按钮的样式 -->
+        <button class='{{bookSign?"checked":""}}' bindtap='tapSigleSendBook'>开始发书</button>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

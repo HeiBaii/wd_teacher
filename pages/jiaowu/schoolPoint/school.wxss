@@ -1,0 +1,86 @@
+/* pages/jiaowu/schoolPoint/school.wxss */
+@import "../../../wxss/common.wxss";
+page{
+  background: #f6f8fa;
+}
+.course-btm{
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  position:fixed;
+left:0;
+bottom:0;
+
+}
+.course-btm button{
+  width: 222rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  margin-top: 14rpx;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  padding: 0;
+}
+.btn01{
+  margin-left: 30rpx;
+  background: linear-gradient(to right, #5dd517 , #1fc81a);
+}
+.btn02{
+  background: linear-gradient(to right, #40b7fd , #418cf4);
+}
+.btn03{
+  background: linear-gradient(to right, #6a7bfd , #6468f8);
+  margin-right: 30rpx;
+}
+.start-send button{
+  width: 690rpx;
+  background: linear-gradient(to right, #369cd7 , #3777d0);
+}
+.btn-opac{
+  opacity: 0.32;
+}
+.start-send .checked{
+  background: linear-gradient(to right, #40b7fd , #418cf4);
+}
+.cour-top{
+  margin-top: 88rpx;
+}
+.course-name image{
+  width: 58rpx;
+  height: 36rpx;
+  vertical-align: top;
+  margin-top: 4rpx;
+}
+
+.list_item_box{
+  overflow: hidden;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color: #999999;
+  width: 100%;
+  padding: 24rpx 0rpx;
+  padding-left:110rpx;
+  margin: 0;
+  background: #f6f8fa;
+  border-top: 1px solid #e1e1e1;
+}
+
+.list-box{
+  padding: 0rpx;
+}
+
+.list_name_box{
+  padding: 30rpx 0;
+  /* font-weight: bold; */
+  text-align: left;
+}
+
+.cour-title{
+  width: 18%;
+}
+
+.cour-contain{
+  width: 60%;
+}

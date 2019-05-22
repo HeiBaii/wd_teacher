@@ -1,0 +1,20 @@
+<view class='container'>
+  <view class='top-title'>
+    <view class='campus'>校区</view>
+    <view class='teach'>教学点</view>
+  </view>
+  <view class='campus-box'>
+    <!-- 校区tab wx:for='{{listTab}}'-->
+    <scroll-view scroll-y class="{{isIphoneX?'campusx':''}} campus-left left">
+      <block wx:for="{{list}}" wx:for-index='index'  wx:key="{{id}}">
+        <view class="campus-tab {{schoolId==item.id?'active':''}}" data-index='{{index}}' data-id='{{item.id}}' bindtap='tabSchool'>{{item.label}}</view>
+      </block>
+    </scroll-view>
+    <!-- 校区包含的教学点 -->
+    <scroll-view scroll-y class='campus-right right'>
+      <block wx:for="{{list[curIndex].children}}" wx:for-index='index' wx:key="{{id}}">
+        <view class='teach-school' bindtap='tapPlace' data-id='{{item.id}}' data-name='{{item.label}}'>{{item.label}} </view>
+      </block>
+    </scroll-view>
+  </view> 
+</view>

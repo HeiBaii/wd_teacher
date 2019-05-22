@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='cour-top' wx:if="{{showHidden}}">
+    <view class='today-cour'><view class='course-bg'>今日课程</view></view>
+    <view class='common-calendar'>
+        <view>
+          <picker mode="date" value="{{date}}" start="2018-09-01" bindchange="bindDateChange">
+            <view class="picker">
+              {{date}}
+              <text>{{weeks}}</text>
+              <image class='common-down-image' src='../../../images/icon_01.png'></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+  </view>
+  <view class='n20'></view>
+  <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" style='margin-bottom:100rpx;'>
+    <view class='list-box' wx:for='{{list}}' wx:key='this' wx:for-item='parentItem' wx:for-index='parentIndex' >
+      <view class='list'>
+        <view class='list_name_box' catchtap='listTap' data-parentindex='{{parentIndex}}'>
+          <view class='icon-box'><icon type="{{parentItem.select}}" size="24" data-parentindex="{{parentIndex}}" data-select="{{parentItem.select}}" bindtap="choose"></icon></view>
+          <view class='course-name'>
+            <image src='../../../images/icon_hb.png' hidden="{{parentItem.isUnion == 1 ? false:true}}"></image>
+            {{parentItem.courseName}}
+          </view>
+          <view class='icon-zk'>
+            <image src='../../../images/icon_01.png'  class='icon_down {{parentItem.show&&"icon_down_rotate"}}'></image>
+          </view>
+        </view>
+        <view class='list_item_box' wx:if='{{parentItem.show}}'> 
+          <view wx:for='{{parentItem.item}}' wx:key='this' catchtap='listItemTap' data-index='{{index}}' data-parentindex='{{parentIndex}}'>
+
+	    <view class='item-txt'>
+              <text wx:if='true' class='cour-title'>{{item.timeTitle}}</text>
+              <text wx:if='true' class='cour-contain'>{{item.timeName}}</text>
+            </view>
+            <view class='item-txt'>
+              <text wx:if='true' class='cour-title'>{{item.addrTitle}}</text>
+              <text wx:if='true' class='cour-contain'>{{item.addrName}}</text>
+            </view>
+            <view class='item-txt'>
+              <text wx:if='true' class='cour-title'>{{item.bookTitle}}</text>
+              <text wx:if='true' class='cour-contain'>{{item.bookName}}</text>
+            </view> 
+          </view>
+        </view>  
+      </view>
+    </view>
+  </scroll-view>
+
+  <!--无数据时内容展示  -->
+  <view class="data-info" hidden='{{dataInfo}}'><text>当前暂无数据</text></view>
+
+  <view class="{{isIphoneX?'btn-phonex':''}} course-btm">
+    <button  class='{{loginBtn}}' bindtap='showBtn'>生成二维码</button>
+  </view>
+</view>

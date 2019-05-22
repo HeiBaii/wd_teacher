@@ -1,0 +1,21 @@
+<import src="/component/template/search/search.wxml" />
+
+<view class='container'>
+  <view class='search-box'>
+  <template is="tpl-search" data="{{holder,keyword,showClearicon}}"></template>
+    <view class='btn-box'>
+      <button class='search-btn' hover-class="btn-hover" bindtap='confirmSearch'>搜索</button>
+    </view>
+  </view>
+  <view class='search-his {{historyHidden}}'>
+    <view class='search-his-top'>
+      <view class='sea-his-title'>历史记录</view>
+      <view class='sea-his-clear common-font' bindtap='delSearchList'>清空记录</view>
+    </view>
+    <view class='search-his-btm'>
+      <block wx:for="{{search_list}}" wx:key="{{index}}">
+        <view class='search-his-txt' bindtap='onTapHistorySearch' data-keyword="{{item}}">{{item}}</view>
+      </block>
+    </view>
+  </view>
+</view>

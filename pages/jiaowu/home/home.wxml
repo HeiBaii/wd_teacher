@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='bg clear'>
+    <image src='../../../images/bg@2x.png' ></image>
+  </view>
+  <view class='self-info' bindtap='tapHome'>
+    <view class='tea_pic'>
+      <image src='{{avatar}}'  mode='aspectFit'></image>as
+    </view>
+    <view class='tea-name'>
+      {{name}}<text>\n教务</text>
+    </view>
+  </view>
+  <!-- <view class='bottom'>
+    <view class='saoma' bindtap='tapScan'>
+      <image src='../../../images/saoma_education.png'></image>
+    </view>
+    <view class='his-jl' bindtap='tapTeaHistory'>
+      <image src='../../../images/lsjl_btn.png'></image>
+    </view>
+  </view> -->
+   <view class= "t-bottom">
+    <view class="t-bottom-l" bindtap='tapScan'>
+      <image  src = "../../../images/white@2x.png"></image>
+      <view class="t-bottom-detail">
+        <image src="../../../images/icon_saoyisao@2x.png"></image>
+        <view class="box"></view>
+        <view class="text">扫一扫</view>
+      </view>
+    </view>
+    <view   bindtap='tapTeaHistory'>
+      <image  src = "../../../images/white@2x.png"></image>
+      <view class="t-bottom-detail">
+        <image src="../../../images/icon_lishijilu@2x.png"></image>
+        <view class="box"></view>
+        <view class="text">历史记录</view>
+      </view>
+    </view>
+  
+  </view>
+</view>

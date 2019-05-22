@@ -1,0 +1,236 @@
+<!--pages/jiaowu/history/history.wxml-->
+<view class='container'>
+  <view class='top-tab'>
+    <view class="tab-left">
+      <view class="txt {{currentTab==0 ? 'edu-on' : ''}}" bindtap="swichNav" data-current="0">签到记录</view>
+      <view class='on-line' hidden='{{currentTab!=0}}'></view>
+    </view>
+    <view class='tab-right'>
+      <view class="txt {{currentTab==1 ? 'edu-on' : ''}}" bindtap="swichNav" data-current="1">发书记录</view>
+      <view class='on-line' hidden='{{currentTab!=1}}'></view>
+    </view>
+  </view>
+
+  <!-- 签到记录 -->
+  <swiper current='{{currentTab}}' duration='300' bindchange='bindSwiper' style="height: {{height?height+'px':'auto'}};width:100%">
+    <swiper-item>
+      <scroll-view scroll-y style="height:{{height}}px;" bindscrolltolower="tapLower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class='common-top'>
+          <search wx:if="{{search_show[0]}}" holder="{{holder[0]}}" keyword="{{keyword[0]}}" bindSearch="tapSearch" bindSearchPage="gotoSearch"></search>
+          <!-- 日期 -->
+          <view class='cour-date'>
+            <view class='today-cour'>
+              <view class='school-addr' bindtap='tapSchoolAndPlace'>
+                <view class='txt-area'>{{schoolAndPlaceName[0]}}</view>
+                <image class='common-down-image' src='../../../images/icon_01.png'></image>
+              </view>
+            </view>
+            <!-- 筛选部分 -->
+            <view class='common-calendar'>
+              <view>
+                <picker mode="date" value="{{timeDay[0]}}" start="2018-09-01" bindchange="bindDateChange">
+                  <view class="">
+                    {{timeStr[0]}}
+                    <image class='common-down-image' src='../../../images/icon_01.png'></image>
+                  </view>
+                </picker>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- <view class='n20'></view> -->
+        <!-- <view class='common-jl-bg' wx:for='{{list}}' wx:key="{{id}}">
+          <view class='common-l-icon'>
+            <view class='common-dot'></view>
+          </view>
+          <view class='common-c-course'>
+            <view class='common-course-title'>{{item.showName}}</view>
+            <view class='common-course-xq common-font'>
+              <text>签到时间：{{item.cardTime}}</text>
+              <text wx:if="{{item.type == '老师'}}">学生签到人数：{{item.studentNum}}人</text>
+            </view>
+          </view>
+          <view class='ident-name'>
+            <text class='info-name'>{{item.name}}</text>
+            <text class='ident-teach' wx:if="{{item.type == '老师'}}">老师</text>
+            <text class='ident-stu' wx:else>学生</text>
+          </view>
+        </view> -->
+        <block wx:for="{{list}}" wx:key="item">
+          <view class="content" bindtap='tapSignDetail' data-name='{{item.showName}}' data-schedule='{{item.scheduleId}}' data-class='{{item.classId}}'>
+            <view class="contentLeft">
+              <view class="className">{{item.showName}}</view>
+               <view class="classDetail">
+                <view class="classDetailNumber">
+                  <view class="classDetailNumberOne">班级人数:</view>
+                  <view>{{item.classStudentNum}}人</view>
+                </view>
+                <view class="classDetailsignIn">
+                  <view class="classDetailsignInOne">已签到:</view>
+                  <view>{{item.signedNum}}人</view>
+                </view>
+                <view class="classDetailsignOut">
+                  <view class="classDetailsignOutOne">未签到:</view>
+                  <view>{{item.unSignNum}}人</view>
+                </view>
+                <image class='contentImage'  src='../../../images/u720.png'></image>
+              </view>
+             
+              <view class="classAdress">
+              <image src="../../../images/dizhi.png"></image>
+                <view>上课地点:</view>
+                <view>{{item.classAddr}} </view>
+              </view>
+               <view class="classTime">
+              <image src="../../../images/shijian.png"></image>
+                <view>上课时间:</view>
+                <view>{{item.classTime}}</view>
+              </view>
+            </view>
+            <!-- <view class="contentRight" bindtap='tapSignDetail' data-name='{{item.showName}}' data-schedule='{{item.scheduleId}}' data-class='{{item.classId}}'> -->
+              <!-- <image class='contentImage' src='../../../images/u720.png'></image> -->
+            <!-- </view> -->
+          </view>
+        </block>
+        <view class='down-deadline common-font' wx:if="{{load[0]}}">
+          正在加载更多...
+        </view>
+        <view class='down-deadline common-font' wx:else>
+          — 已到底部 —
+        </view>
+      </scroll-view>
+
+      <!-- 选课 点击校区/教学点后的样式 -->
+      <view class='common-shadow-box' hidden='{{shadowSchoolPlace[0]}}'>
+        <view class='common-shadow-contain'>
+          <view class='common-top'>
+            <search holder="{{holder[0]}}" keyword="{{keyword[0]}}" bindSearch="tapSearch" bindSearchPage="gotoSearch"></search>
+            <view class='tab'>
+              <view class='common-shadow-choice ' bindtap='tapAll'>
+                <text>请选择校区/教学点</text>
+              </view>
+            </view>
+          </view>
+          <view class='common-school'>
+            <view class='all-campus' bindtap='tapAll'>全部校区</view>
+            <view class='campus-box'>
+              <!-- 校区tab wx:for='{{listTab}}'-->
+              <scroll-view scroll-y class='campus-left left' style='height:{{height}}px;'>
+                <block wx:for="{{schoolAndPlaceList}}" wx:for-index='index' wx:key="{{id}}">
+                  <view class="campus-tab {{schoolId[0]==item.id?'active':''}}" data-index='{{index}}' data-id='{{item.id}}' bindtap='tabSchool'>{{item.label}}</view>
+                </block>
+              </scroll-view>
+              <!-- 校区包含的教学点 -->
+              <scroll-view scroll-y class='campus-right right'>
+                <view class="teach-school {{placeId[0]==0?'on':''}}" bindtap='tapPlace' data-id='0' data-name='全部'>全部</view>
+                <block wx:for="{{schoolAndPlaceList[curIndex[0]].children}}" wx:for-index='index' wx:key="{{id}}">
+                  <view class="teach-school {{placeId[0]==item.id?'on':''}}" bindtap='tapPlace' data-id='{{item.id}}' data-name='{{item.label}}'>{{item.label}} </view>
+                </block>
+              </scroll-view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 点击身份筛选后的样式 -->
+      <view class='common-shadow-box' hidden='{{shadowIdent}}'>
+        <view class='shadow-ident-container'>
+          <view class='common-top'>
+            <search holder="{{holder[0]}}" keyword="{{keyword[0]}}" bindSearch="tapSearch" bindSearchPage="gotoSearch"></search>
+            <view class='tab'>
+              <view class='common-shadow-choice '>
+                <text bindtap='tapIndentify' data-indentify='无'>请选择身份</text>
+              </view>
+            </view>
+          </view>
+          <view>
+            <view class='ident-line {{indentify=="老师"?"on":""}}' bindtap='tapIndentify' data-indentify='老师'>老师</view>
+            <view class='ident-line {{indentify=="学生"?"on":""}}' bindtap='tapIndentify' data-indentify='学生'>学生</view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+
+    <!-- 发书记录 -->
+    <swiper-item>
+      <scroll-view scroll-y style="height:{{height}}px;" bindscrolltolower="tapLower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class='common-top'>
+          <search wx:if="{{search_show[1]}}" holder="{{holder[1]}}" keyword="{{keyword[1]}}" bindSearch="tapBookSearch" bindSearchPage="gotoSearch"></search>
+          <!-- 日期 -->
+          <view class='cour-date'>
+            <view class='today-cour'>
+              <view class='send-campus' bindtap='tapSchoolAndPlace'>
+                <view class='txt-area common-font'>{{schoolAndPlaceName[1]}}</view>
+                <image class='common-down-image' src='../../../images/icon_01.png'></image>
+              </view>
+            </view>
+            <view class='common-calendar'>
+              <view>
+                <picker mode="date" value="{{timeDay[1]}}" start="2018-09-01" bindchange="bindDateChange">
+                  <view class="picker">
+                    {{timeStr[1]}}
+                    <image class='common-down-image' src='../../../images/icon_01.png'></image>
+                  </view>
+                </picker>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- <view class='n20'></view> -->
+        <view class='common-jl-bg' wx:for='{{sendList}}' wx:key="{{id}}">
+          <view class='common-l-icon '>
+            <view class='common-dot send-dot'></view>
+          </view>
+          <view class='common-c-course'>
+            <view class='common-course-title'>{{item.showName}}</view>
+            <view class='common-course-xq common-font'>
+              <text>日期：{{item.sendDate}}</text>
+              <text decode="{{true}}">应发：{{item.shouldSend}}人 &ensp;&ensp; 实发：{{item.actualSend}}人</text>
+            </view>
+            <view class='send-book common-font'>{{item.bookNames}}</view>
+          </view>
+          <view class='ident-name send-next' data-bookId='{{item.bookId}}' data-index='{{index}}' bindtap='tapBookDetail'>
+            <image src='../../../images/next.png'></image>
+          </view>
+        </view>
+
+        <view class='down-deadline common-font' wx:if="{{load[1]}}">
+          正在加载更多...
+        </view>
+        <view class='down-deadline common-font' wx:else>
+          — 已到底部 —
+        </view>
+      </scroll-view>
+      <!-- 发书 点击校区/教学点后的样式 -->
+      <view class='common-shadow-box' hidden='{{shadowSchoolPlace[1]}}'>
+        <view class='common-shadow-contain'>
+          <view class='common-top'>
+            <search holder="{{holder[1]}}" keyword="{{keyword[1]}}" bindSearch="tapBookSearch" bindSearchPage="gotoSearch"></search>
+            <view class='tab'>
+              <view class='common-shadow-choice ' bindtap='tapAll'>
+                <text>请选择校区/教学点</text>
+              </view>
+            </view>
+          </view>
+          <view class='common-school'>
+            <view class='all-campus' bindtap='tapAll'>全部校区</view>
+            <view class='campus-box'>
+              <!-- 校区tab wx:for='{{listTab}}'-->
+              <scroll-view scroll-y class='campus-left left' style='height:{{height}}px'>
+                <block wx:for="{{schoolAndPlaceList}}" wx:for-index='index' wx:key="{{id}}">
+                  <view class="campus-tab {{schoolId[1]==item.id?'active':''}}" data-index='{{index}}' data-id='{{item.id}}' bindtap='tabSchool'>{{item.label}}</view>
+                </block>
+              </scroll-view>
+              <!-- 校区包含的教学点 -->
+              <scroll-view scroll-y class='campus-right right'>
+                <view class="teach-school {{placeId[1]==0?'on':''}}" bindtap='tapPlace' data-id='0' data-name='全部'>全部</view>
+                <block wx:for="{{schoolAndPlaceList[curIndex[1]].children}}" wx:for-index='index' wx:key="{{id}}">
+                  <view class="teach-school {{placeId[1]==item.id?'on':''}}" bindtap='tapPlace' data-id='{{item.id}}' data-name='{{item.label}}'>{{item.label}} </view>
+                </block>
+              </scroll-view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
